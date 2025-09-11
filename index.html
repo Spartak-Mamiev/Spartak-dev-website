@@ -8,32 +8,21 @@
   </head>
   <body>
     <header>
-      <div class="some-icons">
-        <a href="https://www.instagram.com/spartak_visuals/" target="_blank">
-          <img src="design/instagram.png" alt="instagram icon" width="30px" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/spartak-mamiev-a20442161/"
-          target="_blank"
-        >
-          <img src="design/linkedin.png" alt="linkedin icon" width="30px" />
-        </a>
-      </div>
-      <nav>
+      <p class="header-name-logo">Spartak Dev</p>
+      <nav class="nav-bar">
         <ul>
           <li><a href="">Home</a></li>
           <li><a href="">About</a></li>
-          <li><a href="">Skills</a></li>
           <li><a href="">Projects</a></li>
           <li><a href="">Contact</a></li>
         </ul>
       </nav>
-      <div class="theme-toggle-container">
-        <label for="light-theme">L</label>
-        <input type="radio" id="light-theme" name="toggle" />
-
-        <label for="dark-theme">D</label>
-        <input type="radio" id="dark-theme" name="toggle" />
+      <div class="mode-switch-container">
+        <label for="mode-toggle">Light mode</label>
+        <div class="toggle-container">
+          <div class="toggle"></div>
+          <input type="checkbox" id="mode-toggle" style="display: none" />
+        </div>
       </div>
     </header>
 
