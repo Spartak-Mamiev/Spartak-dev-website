@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=League+Spartan:wght@100..900&display=swap');
+
+/* --- CSS Reset --- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
