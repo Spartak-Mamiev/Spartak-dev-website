@@ -57,6 +57,8 @@ input, button, textarea, select {
 }
 
 
+/* --- HEADER --- */
+
 header {
   padding: 20px 80px;
   display: flex;
@@ -108,3 +110,55 @@ header label {
   background-color: white;
 }
 
+
+/* --- MAIN --- */
+
+
+#main {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 150px 0px;
+  padding: 0px 80px;
+}
+
+#main img {
+  width: 630px;
+  height: 500px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0);
+}
+
+.intro-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.intro-text-container h1 {
+  font-size: var(--font-large);
+}
+
+.rolle-description {
+  font-size: var(--font-medium);
+}
+
+.cta-buttons-container {
+  margin-top: 30px;
+}
+
+.contact-cta {
+  background-color: var(--black);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.my-projects-cta {
+  text-decoration: none;
+  color: var(--black);
+}
