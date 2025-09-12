@@ -149,7 +149,8 @@ h1 {
 }
 
 .rolle-description,
-.about-text {
+.about-text,
+.project-description {
   font-size: var(--font-medium);
 }
 
@@ -169,3 +170,70 @@ h1 {
   text-decoration: none;
   color: var(--black);
 }
+
+
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 200px 0px;
+  padding: 0px 80px;
+}
+
+.skill-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-main-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px;
+  margin-top: 150px;
+}
+
+.skill-container img {
+  width: 200px;
+}
+
+
+#projects {
+  margin: 200px 0px;
+  padding: 0px 80px;
+}
+
+.project-screenshot {
+  width: 630px;
+  height: 500px;
+  flex-shrink: 0;
+  object-fit: scale-down;
+  
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.projects-container {
+  width: 100%;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+a {
+  flex-shrink: 0;
+}
+
+
+
