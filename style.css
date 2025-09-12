@@ -114,15 +114,16 @@ header label {
 /* --- MAIN --- */
 
 
-#main {
+#home,
+#about {
   display: flex;
   justify-content: space-between;
   gap: 30px;
-  margin: 150px 0px;
+  margin: 200px 0px;
   padding: 0px 80px;
 }
 
-#main img {
+.img {
   width: 630px;
   height: 500px;
   flex-shrink: 0;
@@ -131,18 +132,24 @@ header label {
   filter: saturate(0);
 }
 
-.intro-text-container {
+.img.about {
+  object-position: center 70%;
+}
+
+.intro-text-container,
+.about-text-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 20px 0;
 }
 
-.intro-text-container h1 {
+h1 {
   font-size: var(--font-large);
 }
 
-.rolle-description {
+.rolle-description,
+.about-text {
   font-size: var(--font-medium);
 }
 
@@ -150,7 +157,7 @@ header label {
   margin-top: 30px;
 }
 
-.contact-cta {
+.cta {
   background-color: var(--black);
   color: white;
   padding: 10px 20px;
