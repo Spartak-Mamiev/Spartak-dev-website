@@ -66,7 +66,8 @@ header {
   align-items: center;
 }
 
-.header-name-logo {
+.header-name-logo,
+footer p {
   font-size: var(--font-medium);
   font-weight: bold;
 }
@@ -115,7 +116,8 @@ header label {
 
 
 #home,
-#about {
+#about,
+#contact {
   display: flex;
   justify-content: space-between;
   gap: 30px;
@@ -137,7 +139,8 @@ header label {
 }
 
 .intro-text-container,
-.about-text-container {
+.about-text-container,
+.contact-text-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -150,7 +153,8 @@ h1 {
 
 .rolle-description,
 .about-text,
-.project-description {
+.project-description,
+.cta-text  {
   font-size: var(--font-medium);
 }
 
@@ -192,6 +196,7 @@ h1 {
   grid-template-columns: repeat(4, 1fr);
   gap: 100px;
   margin-top: 150px;
+  margin-bottom: 150px;
 }
 
 .skill-container img {
@@ -234,6 +239,107 @@ h1 {
 a {
   flex-shrink: 0;
 }
+
+.some-links-section {
+  display: flex;
+  gap: 20px;
+}
+
+.some-links-section img {
+  width: 30px;
+}
+
+#contact form {
+  width: 630px;
+  height: 500px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--light-grey);
+}
+
+.contact-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.name-and-email {
+  display: flex;
+  gap: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#contact label{
+  font-size: 12px;
+}
+
+#name,
+#email {
+  width: 200px;
+  height: 30px;
+  padding: 10px 10px 12px 10px;
+  background-color: lightgray;
+  border: none;
+}
+
+#message {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  min-width: 420px;
+  max-height: 200px;
+  background-color: lightgray;
+  border: none;
+  padding: 10px;
+}
+
+#name::placeholder,
+#email::placeholder,
+#message::placeholder {
+  font-size: 10px;
+}
+
+#submit {
+  align-self: flex-end;
+  margin-top: 15px;
+  font-size: var(--font-small);
+  color: white;
+  background-color: var(--black);
+  border: none;
+  padding: 5px 20px;
+}
+
+
+footer {
+  text-align: center;
+  padding: 100px;
+  border-top: 1px solid var(--light-grey);
+}
+
+footer span {
+  font-weight: 400;
+  font-size: var(--font-small);
+}
+
 
 
 
