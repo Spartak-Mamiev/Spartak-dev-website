@@ -88,13 +88,16 @@ footer p {
   transition: all 0.3s ease;
 }
 
-.nav-bar a:hover {
+.nav-bar a:hover,
+header label:hover,
+.my-projects-cta:hover {
   border-bottom: 1px solid var(--black);
 }
 
 header label {
   font-size: var(--font-small);
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .mode-switch-container {
@@ -192,6 +195,7 @@ h1 {
 .my-projects-cta {
   text-decoration: none;
   color: var(--black);
+  transition: all 0.3s ease;
 }
 
 
