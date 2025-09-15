@@ -19,8 +19,6 @@
   --grey: #686868;
   --secondary-color: #B4B4B4;
   --input-bg: rgb(211, 211, 211);
-
-
 }
 
 /* --- CSS Reset --- */
@@ -65,9 +63,7 @@ input, button, textarea, select {
 body.dark-mode .skill-container img,
 body.dark-mode .some-links-section img {
   filter: invert(1);
-  
 }
-
 
 
 @media (prefers-reduced-motion: reduce) {
@@ -266,10 +262,11 @@ h1 {
 
 .project-screenshot {
   width: 630px;
-  height: 500px;
+  height: 380px;
   flex-shrink: 0;
   object-fit: scale-down;
-  
+  overflow: hidden;
+  object-fit: cover
 }
 
 #projects {
@@ -291,6 +288,30 @@ h1 {
   gap: 30px;
   margin-bottom: 40px;
 }
+
+.project-description-container {
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.project-description-container a {
+  background-color: var(--primary-color);
+  color: var(--bg-btn-text);
+  padding: 10px 20px;
+  text-decoration: none;
+  margin-right: 30px;
+  transition: all 0.3s ease;
+}
+
+.project-description-container a:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
 
 a {
   flex-shrink: 0;
@@ -586,8 +607,6 @@ body.dark-mode .some-links-section img {
 
   }
 
-
-
   .skill-container p {
     display: none;
   }
@@ -612,6 +631,14 @@ body.dark-mode .some-links-section img {
   .about-text-container h1,
   .contact-text-container h1 {
     font-size: var(--font-large);
+  }
+
+  .project-description-container a {
+    display: none;
+  }
+
+  .project-description-container h1 {
+    align-self: center;
   }
 
   .project-card {
