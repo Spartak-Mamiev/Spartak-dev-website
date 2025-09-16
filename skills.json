@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "icons/html.png",
+    "name": "HTML",
+    "description": "Structure and tidyness"
+  },
+  {
+    "icon": "icons/css-3.png",
+    "name": "CSS",
+    "description": "Flexbox, Grid, Responsive Design"
+  },
+  {
+    "icon": "icons/java-script.png",
+    "name": "JavaScript",
+    "description": "DOM manipulation, ES6 basics"
+  },
+  {
+    "icon": "icons/atom.png",
+    "name": "React",
+    "description": "In progress"
+  }
+]
