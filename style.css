@@ -55,6 +55,7 @@ header {
 .header-name-logo, footer p {
   font-size: var(--font-medium);
   font-weight: bold;
+  flex-shrink: 0;
 }
 .nav-bar ul {
   list-style: none;
@@ -364,18 +365,22 @@ footer span {
 }
 
 /* --- RESPONSIVE --- */
-@media all and (max-width: 600px) {
+@media all and (max-width: 800px) {
   :root {
     --font-large: 26px;
     --font-medium: 16px;
     --font-small: 10px;
   }
+  
+  
   header {
+
     display: grid;
     grid-template-columns: 2, 1fr;
     grid-template-rows: 2, 1fr;
     gap: 20px;
     padding: 20px 10px;
+    justify-content: center;
   }
   #home, #about, #contact, #skills, #projects {
     margin: 0 0 20px 0;
@@ -394,6 +399,7 @@ footer span {
     align-items: flex-start;
     font-size: var(--font-medium);
   }
+
   .header-name-logo {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
