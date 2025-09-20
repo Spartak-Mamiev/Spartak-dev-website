@@ -423,6 +423,11 @@ footer span {
     min-width: 0;
     max-width: 100%;
   }
+
+  .skills>h1 {
+    align-self: center;
+  }
+
   .skill-container h1 {
     margin-top: 10px;
     font-size: var(--font-medium);
