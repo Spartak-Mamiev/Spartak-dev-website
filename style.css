@@ -443,8 +443,8 @@ footer span {
     max-width: 100%;
   }
 
-  #skills > h1 {
-    align-self: center;
+  #skills {
+    text-align: center;
   }
 
   .skill-container h1 {
