@@ -121,6 +121,7 @@ body.dark-mode .toggle {
 #home, #about, #contact {
   display: flex;
   justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
   margin: 200px 0;
