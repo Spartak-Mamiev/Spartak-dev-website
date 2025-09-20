@@ -9,12 +9,19 @@ const projectsContainer = document.querySelector('.projects-container');
 
 
 const savedTheme = localStorage.getItem('theme');
+
 if (savedTheme === 'dark') {
   body.classList.add('dark-mode');
   toggle.style.transform = 'translateX(24px)';
   modeToggle.checked = true;
-  modeLabel.textContent = 'Light mode';
+  toggle.innerHTML =
+     '<img class="toggle-icon" src="icons/light_mode_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="dark mode icon" style="filter: invert(1)">';
+} else {
+
+  toggle.innerHTML =
+   '<img class="toggle-icon" src="icons/mode_night_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="light mode icon" style="filter: invert(1);">';
 }
+
 
 
 modeToggle.addEventListener('change', () => {
@@ -22,12 +29,12 @@ modeToggle.addEventListener('change', () => {
 
   if (isDark) {
     toggle.style.transform = 'translateX(24px)';
-    modeLabel.textContent = 'Light mode';
     localStorage.setItem('theme', 'dark');
+    toggle.innerHTML = '<img class="toggle-icon" class="toggle-icon" src="icons/light_mode_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="light mode icon" style="filter: invert(1);">'
   } else {
     toggle.style.transform = 'translateX(0px)';
-    modeLabel.textContent = 'Dark mode';
     localStorage.setItem('theme', 'light');
+    toggle.innerHTML = '<img class="toggle-icon" src="icons/mode_night_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="light mode icon" style="filter: invert(1);">'
   }
 });
 

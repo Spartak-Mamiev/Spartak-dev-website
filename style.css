@@ -66,7 +66,6 @@ header {
 
 
 .nav-bar a:hover,
-header label:hover,
 .my-projects-cta:hover {
   border-bottom: 1px solid var(--primary-color);
 }
@@ -80,7 +79,7 @@ header label {
   gap: 10px;
   align-items: center;
 }
-.toggle-container {
+.mode-switch-container label{
   width: 50px;
   height: 25px;
   border-radius: 50px;
@@ -91,11 +90,18 @@ header label {
 .toggle {
   width: 20px;
   height: 20px;
+  display: flex;
+  justify-content: center;
   border-radius: 50%;
   background-color: var(--bg-btn-text);
   box-shadow: 2px 0px 4px var(--primary-color);
   transition: all 0.3s ease;
 }
+
+.toggle-icon {
+  width: 16px;
+}
+
 
 /* --- DARK MODE --- */
 body.dark-mode .skill-container img,
