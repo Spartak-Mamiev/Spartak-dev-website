@@ -424,9 +424,8 @@ footer span {
     height: 20px;
   }
   .toggle {
-    width: 17px;
-    height: 17px;
-    margin-top: 2px;
+    width: 20px;
+    height: 20px;
     box-shadow: 1px 1px 4px var(--primary-color);
   }
   .img, .project-screenshot, #contact form {
