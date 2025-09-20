@@ -12,7 +12,7 @@
   {
     "icon": "icons/java-script.png",
     "name": "JavaScript",
-    "description": "DOM manipulation, ES6 basics"
+    "description": "DOM manipulation, modern ES6"
   },
   {
     "icon": "icons/atom.png",
