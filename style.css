@@ -390,11 +390,15 @@ footer span {
     margin: 100px 0px;
   }
 
+  #skills {
+    text-align: center;
+  }
+
   footer {
     padding: 50px 100px;
   }
 
-   #home, #contact, #skills, #projects {
+   #contact, #skills, #projects {
     padding-top: 50px;
     border-top: 1px solid var(--primary-color-50);
   }
