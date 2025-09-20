@@ -7,7 +7,7 @@
   --primary-color-50: #0000007d;
   --grey: #686868;
   --secondary-color: #B4B4B4;
-  --input-bg: rgb(211, 211, 211);
+  --input-bg: rgb(234, 234, 234);
   --font-large: 48px;
   --font-medium: 20px;
   --font-small: 16px;
@@ -37,6 +37,11 @@ body {
   background-color: var(--bg-btn-text);
   color: var(--primary-color);
   justify-self: center;
+}
+
+input {
+  color: black;
+  font-size: small;
 }
 
 /* --- HEADER --- */
