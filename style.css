@@ -367,6 +367,7 @@ footer span {
 }
 
 @media all and (max-width: 1455px) {
+
   .project-description-container a { display: none; }
 
   .project-description-container {
