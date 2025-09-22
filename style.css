@@ -406,7 +406,7 @@ footer span {
 }
 
 /* --- RESPONSIVE --- */
-@media all and (max-width: 800px) {
+@media all and (max-width: 500px) {
   :root {
     --font-large: 26px;
     --font-medium: 16px;
