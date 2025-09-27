@@ -1,0 +1,41 @@
+@media all and (max-width: 1455px) {
+  .img {
+    flex-shrink: 0;
+  }
+
+  .project-description-container a { display: none; }
+
+  .project-description-container {
+    align-items: center;
+  }
+
+  #home, #about {
+    margin: 40px 0px;
+  }
+
+  #contact, #skills, #projects {
+    margin: 60px 0px;
+  }
+
+  .skill-container img {
+  min-width: 150px;
+  max-width: 150px;
+  }
+
+  .skills-main-container {
+    margin: 100px 0px;
+  }
+
+  #skills {
+    text-align: center;
+  }
+
+  footer {
+    padding: 50px 100px;
+  }
+
+   #contact, #skills, #projects {
+    padding-top: 50px;
+    border-top: 1px solid var(--primary-color-50);
+  }
+}
