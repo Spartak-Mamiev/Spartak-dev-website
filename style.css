@@ -8,9 +8,9 @@
   --grey: #686868;
   --secondary-color: #B4B4B4;
   --input-bg: rgb(234, 234, 234);
-  --font-large: clamp(2rem, 5vw, 3rem);
-  --font-medium: clamp(1rem, 5vw, 1.25rem);
-  --font-small: 1rem;
+  --font-large: 48px;
+  --font-medium: 20px;
+  --font-small: 16px;
 }
 
 .dark-mode {
@@ -29,7 +29,6 @@ input, button, textarea, select { font: inherit; color: inherit; }
 /* --- BASE --- */
 body {
   max-width: 1440px;
-  min-width: 1120px;
   width: 100%;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -124,6 +123,7 @@ body.dark-mode .toggle {
   display: flex;
   justify-content: space-between;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
   margin: 200px 0;
   padding: 0 80px;
@@ -132,6 +132,7 @@ body.dark-mode .toggle {
 .img {
   width: 630px;
   height: 500px;
+  flex-shrink: 0;
   object-fit: cover;
   object-position: center top;
 }
@@ -157,7 +158,7 @@ h1 { font-size: var(--font-large); }
 .project-description,
 .cta-text {
   font-size: var(--font-medium);
-  min-width: 420px;
+  min-width: 620px;
   max-width: 620px;
 }
 .cta-buttons-container { margin-top: 30px; }
@@ -188,13 +189,13 @@ h1 { font-size: var(--font-large); }
 }
 .skills-main-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 100px;
   margin: 150px 0;
 }
 .skill-container img {
-  min-width: 70px;
-  max-width: 150px;
+  min-width: 200px;
+  max-width: 200px;
 }
 
 /* --- PROJECTS --- */
@@ -214,13 +215,15 @@ h1 { font-size: var(--font-large); }
   align-items: center;
   justify-content: space-between;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
   margin-bottom: 40px;
 }
 .project-screenshot {
   width: 630px;
   height: 380px;
-  object-fit: contain;
+  flex-shrink: 0;
+  object-fit: cover;
   overflow: hidden;
 }
 .project-description-container {
@@ -243,7 +246,7 @@ h1 { font-size: var(--font-large); }
   background-color: var(--secondary-color);
   color: var(--primary-color);
 }
-
+a { flex-shrink: 0; }
 
 /* --- CONTACT --- */
 .some-links-section {
@@ -261,6 +264,7 @@ h1 { font-size: var(--font-large); }
 #contact form {
   width: 630px;
   height: 500px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -408,7 +412,7 @@ footer span {
     --font-large: 26px;
     --font-medium: 16px;
     --font-small: 10px;
-
+  }
   
   
   header {
@@ -468,7 +472,7 @@ footer span {
   .img, .project-screenshot, #contact form {
     width: 100%;
     height: auto;
-    min-width: 320px;
+    min-width: 0;
     max-width: 100%;
   }
 
