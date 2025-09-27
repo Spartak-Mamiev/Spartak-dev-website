@@ -2,7 +2,7 @@
 
 /* --- VARIABLES --- */
 :root {
-  --bg-btn-text: hsl(0, 0%, 100%);
+  --bg-btn-text: #ffffff;
   --primary-color: #000000;
   --primary-color-50: #0000007d;
   --grey: #686868;
@@ -134,7 +134,6 @@ body.dark-mode .toggle {
   height: 500px;
   object-fit: cover;
   object-position: center top;
-  filter: saturate(0);
 }
 .img.main { animation: slideInFromRight 1s ease; }
 .img.about { object-position: center 70%; }
@@ -207,6 +206,8 @@ h1 { font-size: var(--font-large); }
   align-items: center;
   gap: 60px;
 }
+
+
 .projects-container { width: 100%; }
 .project-card {
   display: flex;
@@ -371,7 +372,7 @@ footer span {
   }
 
   #home, #about {
-    margin: 40px 0px;
+    margin: 200px 0px;
   }
 
   #contact, #skills, #projects {
