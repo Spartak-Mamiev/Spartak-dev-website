@@ -1,4 +1,19 @@
-@media all and (max-width: 1455px) {
+@media all and (max-width: 1350px) {
+
+    :root {
+    --font-large: 26px;
+    --font-medium: 16px;
+    --font-small: 10px;
+  }
+
+    .nav-bar ul {
+    font-size: var(--font-medium);
+  }
+
+  #home, #about, #contact {
+    flex-wrap: wrap;
+  }
+
   .img {
     flex-shrink: 0;
   }
@@ -15,6 +30,10 @@
 
   #contact, #skills, #projects {
     margin: 60px 0px;
+  }
+
+  #about {
+    margin-top: 60px;
   }
 
   .skill-container img {
