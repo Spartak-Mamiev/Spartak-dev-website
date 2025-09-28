@@ -218,8 +218,8 @@ h1 { font-size: var(--font-large); }
   margin-bottom: 40px;
 }
 .project-screenshot {
-  width: 630px;
-  height: 380px;
+  width: 550px;
+  height: 320px;
   flex-shrink: 0;
   object-fit: cover;
   overflow: hidden;
