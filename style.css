@@ -191,11 +191,11 @@ h1 { font-size: var(--font-large); }
   display: grid;
   grid-template-columns: repeat(2, minmax(200px, 1fr));
   gap: 100px;
-  margin: 150px 0;
+  margin: 100px 0;
 }
 .skill-container img {
-  min-width: 200px;
-  max-width: 200px;
+  min-width: 180px;
+  max-width: 180px;
 }
 
 /* --- PROJECTS --- */
