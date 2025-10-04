@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
+html {
+  scroll-behavior: smooth; /* allows scrolling between sections */
+}
+
 /* --- VARIABLES --- */
 :root {
   --bg-btn-text: hsl(0, 0%, 100%);
