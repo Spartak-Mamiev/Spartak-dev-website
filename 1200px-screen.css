@@ -1,9 +1,9 @@
-@media all and (max-width: 1350px) {
+@media all and (max-width: 1000px) {
 
     :root {
-    --font-large: 26px;
-    --font-medium: 16px;
-    --font-small: 10px;
+    --font-large: 1.625rem;
+    --font-medium: 1rem;
+    --font-small: 0.625rem;
   }
 
     .nav-bar ul {
