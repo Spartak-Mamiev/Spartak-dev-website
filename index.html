@@ -2,57 +2,59 @@
 <html lang="en">
   <head>
     <script>
-      function loadGoogleAnalytics() {
-        const GA_ID = 'G-RL2Z90N9JH';
+      document.addEventListener('DOMContentLoaded', function () {
+        // --- Helper: Load Google Analytics only after consent ---
+        function loadGoogleAnalytics() {
+          const GA_ID = 'G-RL2Z90N9JH'; // 🔹 Replace with your Measurement ID
+          const gtagScript = document.createElement('script');
+          gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+          gtagScript.async = true;
+          document.head.appendChild(gtagScript);
 
-        const gtagScript = document.createElement('script');
-        gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-        gtagScript.async = true;
-        document.head.appendChild(gtagScript);
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          window.gtag = gtag;
 
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
+          gtag('js', new Date());
+          gtag('config', GA_ID);
         }
-        window.gtag = gtag;
 
-        gtag('js', new Date());
-        gtag('config', GA_ID);
-      }
+        // --- Helper: Read cookies ---
+        function getCookies() {
+          return document.cookie.split('; ').reduce((acc, cookie) => {
+            const [name, value] = cookie.split('=');
+            acc[name] = value;
+            return acc;
+          }, {});
+        }
 
-      // Helper function to read cookies
-      function getCookies() {
-        return document.cookie.split('; ').reduce((acc, cookie) => {
-          const [name, value] = cookie.split('=');
-          acc[name] = value;
-          return acc;
-        }, {});
-      }
-
-      // Show banner only if no choice saved
-      window.addEventListener('load', () => {
-        const cookies = getCookies();
         const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const declineBtn = document.getElementById('decline-cookies');
+        const cookies = getCookies();
 
+        // --- Show banner only if no choice made ---
         if (!cookies.cookiesAccepted) {
           setTimeout(() => (banner.style.bottom = '0'), 500);
         } else if (cookies.cookiesAccepted === 'true') {
-          loadGoogleAnalytics(); // load GA if already accepted
+          loadGoogleAnalytics();
         }
+
+        // --- Accept cookies ---
+        acceptBtn.addEventListener('click', () => {
+          document.cookie = 'cookiesAccepted=true; path=/; max-age=31536000';
+          banner.style.bottom = '-200px';
+          loadGoogleAnalytics();
+        });
+
+        // --- Decline cookies ---
+        declineBtn.addEventListener('click', () => {
+          document.cookie = 'cookiesAccepted=false; path=/; max-age=31536000';
+          banner.style.bottom = '-200px';
+        });
       });
-
-      // Accept cookies
-      document.getElementById('accept-cookies').onclick = function () {
-        document.cookie = 'cookiesAccepted=true; path=/; max-age=31536000';
-        document.getElementById('cookie-banner').style.bottom = '-200px';
-        loadGoogleAnalytics();
-      };
-
-      // Decline cookies
-      document.getElementById('decline-cookies').onclick = function () {
-        document.cookie = 'cookiesAccepted=false; path=/; max-age=31536000';
-        document.getElementById('cookie-banner').style.bottom = '-200px';
-      };
     </script>
     <meta charset="UTF-8" />
     <meta
@@ -84,7 +86,7 @@
       id="cookie-banner"
       style="
         position: fixed;
-        bottom: 0px;
+        bottom: -200px;
         left: 0;
         right: 0;
         color: black;
@@ -97,7 +99,7 @@
         align-items: center;
         gap: 10px;
         font-family: 'Manrope', sans-serif;
-        font-size: 18px;
+        font-size: 15px;
         transition: bottom 0.5s ease;
         z-index: 1000;
       "
@@ -140,6 +142,7 @@
         </button>
       </div>
     </div>
+
     <header>
       <p class="header-name-logo">Spartak Dev</p>
       <nav class="nav-bar">
