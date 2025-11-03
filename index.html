@@ -1,15 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RL2Z90N9JH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-RL2Z90N9JH');
+    </script>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Spartak Dev</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="1200px-screen.css" />
-    <link rel="stylesheet" href="mobile-screen.css" />
-    <link rel="icon" type="image/png" href="icons/SD icon.png" />
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="1200px-screen.css"
+    />
+    <link
+      rel="stylesheet"
+      href="mobile-screen.css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="icons/SD icon.png"
+    />
+    <script>
+      function acceptCookies() {
+        // Set cookie for 1 year
+        document.cookie = 'cookiesAccepted=true; path=/; max-age=31536000';
+        document.getElementById('cookie-banner').style.display = 'none';
+        // Initialize analytics or other non-essential cookies here
+      }
+
+      function declineCookies() {
+        // Set cookie to remember the user declined
+        document.cookie = 'cookiesAccepted=false; path=/; max-age=31536000';
+        document.getElementById('cookie-banner').style.display = 'none';
+        // Do NOT initialize analytics or other non-essential cookies
+      }
+
+      // Check if user already made a choice
+      window.onload = function () {
+        const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+          const [name, value] = cookie.split('=');
+          acc[name] = value;
+          return acc;
+        }, {});
+
+        if (cookies.cookiesAccepted) {
+          document.getElementById('cookie-banner').style.display = 'none';
+        }
+      };
+    </script>
   </head>
   <body>
+    <div
+      id="cookie-banner"
+      style="
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #eee;
+        padding: 15px;
+        text-align: center;
+        z-index: 1000;
+      "
+    >
+      We use cookies to improve your experience and analyze traffic.
+      <button
+        onclick="acceptCookies()"
+        style="margin: 0 10px"
+      >
+        Accept
+      </button>
+      <button
+        onclick="declineCookies()"
+        style="margin: 0 10px"
+      >
+        Decline
+      </button>
+      <a
+        href="/cookie-policy"
+        style="margin-left: 10px"
+        >Learn more</a
+      >
+    </div>
     <header>
       <p class="header-name-logo">Spartak Dev</p>
       <nav class="nav-bar">
@@ -23,7 +113,11 @@
       </nav>
       <div class="mode-switch-container">
         <label for="mode-toggle"><div class="toggle"></div></label>
-        <input type="checkbox" id="mode-toggle" style="display: none" />
+        <input
+          type="checkbox"
+          id="mode-toggle"
+          style="display: none"
+        />
       </div>
     </header>
 
@@ -36,8 +130,16 @@
           modern design.
         </p>
         <div class="cta-buttons-container">
-          <a href="#contact" class="contact cta">Contact Me</a>
-          <a href="#projects" class="my-projects-cta">My Projects</a>
+          <a
+            href="#contact"
+            class="contact cta"
+            >Contact Me</a
+          >
+          <a
+            href="#projects"
+            class="my-projects-cta"
+            >My Projects</a
+          >
         </div>
       </div>
       <img
@@ -60,10 +162,18 @@
           good movie or a long walk with Freia through the neighborhood.
         </p>
         <div class="cta-buttons-container">
-          <a href="#contact" class="let-us-chat cta">Let's have a chat</a>
+          <a
+            href="#contact"
+            class="let-us-chat cta"
+            >Let's have a chat</a
+          >
         </div>
       </div>
-      <img src="images/Spartak & Freia.jpg" alt="" class="img about" />
+      <img
+        src="images/Spartak & Freia.jpg"
+        alt=""
+        class="img about"
+      />
     </section>
 
     <section id="skills">
@@ -93,22 +203,37 @@
             href="https://www.instagram.com/spartak_visuals/?hl=nb"
             target="_blank"
           >
-            <img src="icons/instagram.png" alt="Instagram icon" />
+            <img
+              src="icons/instagram.png"
+              alt="Instagram icon"
+            />
           </a>
 
           <a
             href="https://www.linkedin.com/in/spartak-mamiev-a20442161/"
             target="_blank"
           >
-            <img src="icons/linkedin.png" alt="LinkedIn icon" />
+            <img
+              src="icons/linkedin.png"
+              alt="LinkedIn icon"
+            />
           </a>
 
-          <a href="https://github.com/Spartak-Mamiev" target="_blank">
-            <img src="icons/github.png" alt="GitHub icon" />
+          <a
+            href="https://github.com/Spartak-Mamiev"
+            target="_blank"
+          >
+            <img
+              src="icons/github.png"
+              alt="GitHub icon"
+            />
           </a>
         </div>
       </div>
-      <form action="https://api.web3forms.com/submit" method="POST">
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
         <input
           type="hidden"
           name="access_key"
@@ -145,7 +270,12 @@
             placeholder="Enter your message"
             required
           ></textarea>
-          <button type="submit" id="submit">Leave a message</button>
+          <button
+            type="submit"
+            id="submit"
+          >
+            Leave a message
+          </button>
         </div>
       </form>
     </section>
@@ -159,6 +289,9 @@
       </p>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script
+      src="script.js"
+      defer
+    ></script>
   </body>
 </html>
