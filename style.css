@@ -4,6 +4,32 @@ html {
   scroll-behavior: smooth; /* allows scrolling between sections */
 }
 
+/* --- COOKIES --- */
+
+#cookie-banner {
+  width: 40%;
+  height: 200px;
+    position: fixed;
+    justify-self: center;
+    margin-bottom: 40px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-family: "Manrope", sans-serif;
+        font-size: 1.5rem;
+        background: #eee;
+        padding: 15px;
+        text-align: center;
+        z-index: 1000;
+}
+.cookie-buttons {
+  margin: 10px 0; 
+}
+
+.cookie-buttons button{
+  padding: 0px 10px;
+}
+
 /* --- VARIABLES --- */
 :root {
   --bg-btn-text: hsl(0, 0%, 100%);

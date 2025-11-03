@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-RL2Z90N9JH"
-    ></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+      function loadGoogleAnalytics() {
+        const GA_ID = 'G-RL2Z90N9JH';
 
-      gtag('config', 'G-RL2Z90N9JH');
+        const gtagScript = document.createElement('script');
+        gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+        gtagScript.async = true;
+        document.head.appendChild(gtagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        window.gtag = gtag;
+
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+      }
+
+      // Helper function to read cookies
+      function getCookies() {
+        return document.cookie.split('; ').reduce((acc, cookie) => {
+          const [name, value] = cookie.split('=');
+          acc[name] = value;
+          return acc;
+        }, {});
+      }
+
+      // Show banner only if no choice saved
+      window.addEventListener('load', () => {
+        const cookies = getCookies();
+        const banner = document.getElementById('cookie-banner');
+
+        if (!cookies.cookiesAccepted) {
+          setTimeout(() => (banner.style.bottom = '0'), 500);
+        } else if (cookies.cookiesAccepted === 'true') {
+          loadGoogleAnalytics(); // load GA if already accepted
+        }
+      });
+
+      // Accept cookies
+      document.getElementById('accept-cookies').onclick = function () {
+        document.cookie = 'cookiesAccepted=true; path=/; max-age=31536000';
+        document.getElementById('cookie-banner').style.bottom = '-200px';
+        loadGoogleAnalytics();
+      };
+
+      // Decline cookies
+      document.getElementById('decline-cookies').onclick = function () {
+        document.cookie = 'cookiesAccepted=false; path=/; max-age=31536000';
+        document.getElementById('cookie-banner').style.bottom = '-200px';
+      };
     </script>
     <meta charset="UTF-8" />
     <meta
@@ -38,67 +77,66 @@
       type="image/png"
       href="icons/SD icon.png"
     />
-    <script>
-      function acceptCookies() {
-        // Set cookie for 1 year
-        document.cookie = 'cookiesAccepted=true; path=/; max-age=31536000';
-        document.getElementById('cookie-banner').style.display = 'none';
-        // Initialize analytics or other non-essential cookies here
-      }
-
-      function declineCookies() {
-        // Set cookie to remember the user declined
-        document.cookie = 'cookiesAccepted=false; path=/; max-age=31536000';
-        document.getElementById('cookie-banner').style.display = 'none';
-        // Do NOT initialize analytics or other non-essential cookies
-      }
-
-      // Check if user already made a choice
-      window.onload = function () {
-        const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
-          const [name, value] = cookie.split('=');
-          acc[name] = value;
-          return acc;
-        }, {});
-
-        if (cookies.cookiesAccepted) {
-          document.getElementById('cookie-banner').style.display = 'none';
-        }
-      };
-    </script>
   </head>
   <body>
+    <!-- Cookie Consent Banner -->
     <div
       id="cookie-banner"
       style="
         position: fixed;
-        bottom: 0;
+        bottom: 0px;
         left: 0;
         right: 0;
-        background: #eee;
-        padding: 15px;
-        text-align: center;
+        background: white;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-family: system-ui, sans-serif;
+        font-size: 15px;
+        transition: bottom 0.5s ease;
         z-index: 1000;
       "
     >
-      We use cookies to improve your experience and analyze traffic.
-      <button
-        onclick="acceptCookies()"
-        style="margin: 0 10px"
-      >
-        Accept
-      </button>
-      <button
-        onclick="declineCookies()"
-        style="margin: 0 10px"
-      >
-        Decline
-      </button>
-      <a
-        href="/cookie-policy"
-        style="margin-left: 10px"
-        >Learn more</a
-      >
+      <span style="max-width: 500px; text-align: center">
+        🍪 We use cookies to improve your experience and analyze traffic. See
+        our
+        <a
+          href="/cookie-policy"
+          style="color: #0073e6; text-decoration: underline"
+          >Cookie Policy</a
+        >.
+      </span>
+      <div style="display: flex; gap: 10px">
+        <button
+          id="accept-cookies"
+          style="
+            background: #0073e6;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Accept
+        </button>
+        <button
+          id="decline-cookies"
+          style="
+            background: #ddd;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Decline
+        </button>
+      </div>
     </div>
     <header>
       <p class="header-name-logo">Spartak Dev</p>
@@ -171,7 +209,7 @@
       </div>
       <img
         src="images/Spartak & Freia.jpg"
-        alt=""
+        alt="Picture of Spartak and Freia"
         class="img about"
       />
     </section>
