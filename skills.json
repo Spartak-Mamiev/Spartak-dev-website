@@ -2,7 +2,7 @@
   {
     "icon": "icons/html.png",
     "name": "HTML",
-    "description": "Structure and tidyness"
+    "description": "Semantic markup & accessibility"
   },
   {
     "icon": "icons/css-3.png",
@@ -12,11 +12,11 @@
   {
     "icon": "icons/java-script.png",
     "name": "JavaScript",
-    "description": "DOM manipulation, modern ES6"
+    "description": "ES6+, DOM, async patterns"
   },
   {
     "icon": "icons/atom.png",
     "name": "React",
-    "description": "In progress"
+    "description": "Components, hooks, state management"
   }
 ]
