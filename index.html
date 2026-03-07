@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <script>
@@ -89,19 +89,21 @@
         bottom: -200px;
         left: 0;
         right: 0;
-        color: black;
-        background: white;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+        color: #2d2640;
+        background: #fff5f0;
+        box-shadow: 0 -2px 10px rgba(45, 38, 64, 0.15);
+        border-top: 2.5px solid #2d2640;
         padding: 20px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         gap: 10px;
-        font-family: 'Manrope', sans-serif;
+        font-family: 'Outfit', sans-serif;
         font-size: 15px;
         transition: bottom 0.5s ease;
         z-index: 1000;
+        cursor: none;
       "
     >
       <span style="max-width: 500px; text-align: center">
@@ -117,12 +119,14 @@
         <button
           id="accept-cookies"
           style="
-            background: #0073e6;
-            color: white;
-            border: none;
+            background: #ff6b9d;
+            color: #fff;
+            border: 2px solid #2d2640;
             padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: 50px;
+            cursor: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
           "
         >
           Accept
@@ -130,18 +134,50 @@
         <button
           id="decline-cookies"
           style="
-            background: #ddd;
-            color: black;
-            border: none;
+            background: #c8b8db;
+            color: #2d2640;
+            border: 2px solid #2d2640;
             padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: 50px;
+            cursor: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
           "
         >
           Decline
         </button>
       </div>
     </div>
+
+    <!-- SVG Filters for liquid effects -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+    >
+      <defs>
+        <filter id="gooey">
+          <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="6"
+            result="blur"
+          />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+            result="goo"
+          />
+          <feComposite
+            in="SourceGraphic"
+            in2="goo"
+            operator="atop"
+          />
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Custom Paint Blob Cursor -->
+    <div id="custom-cursor"></div>
 
     <header>
       <p class="header-name-logo">Spartak Dev</p>
@@ -225,9 +261,148 @@
     </section>
 
     <section id="projects">
-      <h1>My Projects</h1>
-      <div class="projects">
-        <div class="projects-container"></div>
+      <h1>Calculator</h1>
+      <div class="calculator">
+        <div
+          class="calc-display"
+          id="calc-display"
+        >
+          0
+        </div>
+        <div class="calc-buttons">
+          <button
+            class="calc-btn calc-btn-clear"
+            data-action="clear"
+          >
+            AC
+          </button>
+          <button
+            class="calc-btn calc-btn-op"
+            data-action="sign"
+          >
+            +/−
+          </button>
+          <button
+            class="calc-btn calc-btn-op"
+            data-action="percent"
+          >
+            %
+          </button>
+          <button
+            class="calc-btn calc-btn-accent"
+            data-action="op"
+            data-value="/"
+          >
+            ÷
+          </button>
+
+          <button
+            class="calc-btn"
+            data-action="number"
+            data-value="7"
+          >
+            7
+          </button>
+          <button
+            class="calc-btn"
+            data-action="number"
+            data-value="8"
+          >
+            8
+          </button>
+          <button
+            class="calc-btn"
+            data-action="number"
+            data-value="9"
+          >
+            9
+          </button>
+          <button
+            class="calc-btn calc-btn-accent"
+            data-action="op"
+            data-value="*"
+          >
+            ×
+          </button>
+
+          <button
+            class="calc-btn"
+            data-action="number"
+            data-value="4"
+          >
+            4
+          </button>
+          <button
+            class="calc-btn"
+            data-action="number"
+            data-value="5"
+          >
+            5
+          </button>
+          <button
+            class="calc-btn"
+            data-action="number"
+            data-value="6"
+          >
+            6
+          </button>
+          <button
+            class="calc-btn calc-btn-accent"
+            data-action="op"
+            data-value="-"
+          >
+            −
+          </button>
+
+          <button
+            class="calc-btn"
+            data-action="number"
+            data-value="1"
+          >
+            1
+          </button>
+          <button
+            class="calc-btn"
+            data-action="number"
+            data-value="2"
+          >
+            2
+          </button>
+          <button
+            class="calc-btn"
+            data-action="number"
+            data-value="3"
+          >
+            3
+          </button>
+          <button
+            class="calc-btn calc-btn-accent"
+            data-action="op"
+            data-value="+"
+          >
+            +
+          </button>
+
+          <button
+            class="calc-btn calc-btn-wide"
+            data-action="number"
+            data-value="0"
+          >
+            0
+          </button>
+          <button
+            class="calc-btn"
+            data-action="decimal"
+          >
+            .
+          </button>
+          <button
+            class="calc-btn calc-btn-accent"
+            data-action="equals"
+          >
+            =
+          </button>
+        </div>
       </div>
     </section>
 

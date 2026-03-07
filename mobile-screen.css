@@ -4,7 +4,20 @@
     --font-medium: 16px;
     --font-small: 10px;
   }
-  
+
+  /* Disable custom cursor on mobile/touch */
+  #custom-cursor { display: none !important; }
+  body, body *, body *::before, body *::after {
+    cursor: auto !important;
+  }
+  body::before { display: none; }
+
+  /* Disable liquid animation on mobile for performance */
+  .cta:hover, #submit:hover, .my-projects-cta:hover, .calc-btn:hover {
+    animation: none;
+  }
+  .cta::before, .cta::after,
+  #submit::before, #submit::after { display: none; }
   
   header {
     display: grid;
@@ -19,7 +32,7 @@
     padding: 20px 30px;
     flex-direction: column;
     gap: 20px;
-    border-top: 1px solid var(--primary-color-50);
+    border-top: 2.5px solid var(--primary-color);
   }
   #about, #projects, #skills { padding-top: 40px; }
   .cta-buttons-container { display: none; }
@@ -60,11 +73,27 @@
     height: 20px;
     box-shadow: 1px 1px 4px var(--primary-color);
   }
-  .img, .project-screenshot, #contact form {
+  .img, #contact form {
     width: 100%;
     height: auto;
     min-width: 0;
     max-width: 100%;
+  }
+
+  .calculator {
+    width: 100%;
+    max-width: 340px;
+    padding: 16px;
+  }
+  .calc-buttons { gap: 8px; }
+  .calc-btn {
+    padding: 14px 4px;
+    font-size: 16px;
+  }
+  .calc-display {
+    font-size: 26px;
+    min-height: 54px;
+    padding: 12px 14px;
   }
 
   #skills {
@@ -99,13 +128,6 @@
   .about-text-container h1,
   .contact-text-container h1 {
     font-size: var(--font-large);
-  }
-  .project-description-container a { display: none; }
-  .project-description-container h1 { align-self: center; }
-  .project-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
   }
   .some-links-section img { width: 24px; }
   .name-and-email {
