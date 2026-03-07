@@ -310,6 +310,13 @@ h1 {
   padding: 0 80px;
 }
 #skills h1 { justify-self: center; }
+.skills-intro {
+  max-width: 700px;
+  text-align: center;
+  justify-self: center;
+  line-height: 1.7;
+  opacity: 0.85;
+}
 .skill-container {
   display: flex;
   flex-direction: column;
