@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a personal portfolio website project. It showcases your skills, projects, and contact information in a modern, responsive design. The site is built with HTML, CSS, and JavaScript, and uses JSON files for dynamic content. It features light/dark mode, cookie consent, and custom hand-drawn images.
+This is a personal portfolio website project. It showcases my skills, projects, and contact information in a modern, responsive design. The site is built with HTML, CSS, and JavaScript, and uses JSON files for dynamic content. It features light/dark mode, cookie consent, and custom hand-drawn images.
 
 ## Features
 
