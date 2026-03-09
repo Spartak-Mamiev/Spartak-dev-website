@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener("DOMContentLoaded", function () {
         // --- Helper: Load Google Analytics only after consent ---
         function loadGoogleAnalytics() {
-          const GA_ID = 'G-RL2Z90N9JH'; // 🔹 Replace with your Measurement ID
-          const gtagScript = document.createElement('script');
+          const GA_ID = "G-RL2Z90N9JH"; // 🔹 Replace with your Measurement ID
+          const gtagScript = document.createElement("script");
           gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
           gtagScript.async = true;
           document.head.appendChild(gtagScript);
@@ -17,68 +17,52 @@
           }
           window.gtag = gtag;
 
-          gtag('js', new Date());
-          gtag('config', GA_ID);
+          gtag("js", new Date());
+          gtag("config", GA_ID);
         }
 
         // --- Helper: Read cookies ---
         function getCookies() {
-          return document.cookie.split('; ').reduce((acc, cookie) => {
-            const [name, value] = cookie.split('=');
+          return document.cookie.split("; ").reduce((acc, cookie) => {
+            const [name, value] = cookie.split("=");
             acc[name] = value;
             return acc;
           }, {});
         }
 
-        const banner = document.getElementById('cookie-banner');
-        const acceptBtn = document.getElementById('accept-cookies');
-        const declineBtn = document.getElementById('decline-cookies');
+        const banner = document.getElementById("cookie-banner");
+        const acceptBtn = document.getElementById("accept-cookies");
+        const declineBtn = document.getElementById("decline-cookies");
         const cookies = getCookies();
 
         // --- Show banner only if no choice made ---
         if (!cookies.cookiesAccepted) {
-          setTimeout(() => (banner.style.bottom = '0'), 500);
-        } else if (cookies.cookiesAccepted === 'true') {
+          setTimeout(() => (banner.style.bottom = "0"), 500);
+        } else if (cookies.cookiesAccepted === "true") {
           loadGoogleAnalytics();
         }
 
         // --- Accept cookies ---
-        acceptBtn.addEventListener('click', () => {
-          document.cookie = 'cookiesAccepted=true; path=/; max-age=31536000';
-          banner.style.bottom = '-200px';
+        acceptBtn.addEventListener("click", () => {
+          document.cookie = "cookiesAccepted=true; path=/; max-age=31536000";
+          banner.style.bottom = "-200px";
           loadGoogleAnalytics();
         });
 
         // --- Decline cookies ---
-        declineBtn.addEventListener('click', () => {
-          document.cookie = 'cookiesAccepted=false; path=/; max-age=31536000';
-          banner.style.bottom = '-200px';
+        declineBtn.addEventListener("click", () => {
+          document.cookie = "cookiesAccepted=false; path=/; max-age=31536000";
+          banner.style.bottom = "-200px";
         });
       });
     </script>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spartak Dev</title>
-    <link
-      rel="stylesheet"
-      href="style.css"
-    />
-    <link
-      rel="stylesheet"
-      href="1200px-screen.css"
-    />
-    <link
-      rel="stylesheet"
-      href="mobile-screen.css"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="icons/SD icon.png"
-    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="1200px-screen.css" />
+    <link rel="stylesheet" href="mobile-screen.css" />
+    <link rel="icon" type="image/png" href="icons/SD icon.png" />
   </head>
   <body>
     <!-- Cookie Consent Banner -->
@@ -99,7 +83,7 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
-        font-family: 'Outfit', sans-serif;
+        font-family: &quot;Outfit&quot;, sans-serif;
         font-size: 15px;
         transition: bottom 0.5s ease;
         z-index: 1000;
@@ -125,7 +109,7 @@
             padding: 8px 15px;
             border-radius: 50px;
             cursor: none;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: &quot;Space Grotesk&quot;, sans-serif;
             font-weight: 600;
           "
         >
@@ -140,7 +124,7 @@
             padding: 8px 15px;
             border-radius: 50px;
             cursor: none;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: &quot;Space Grotesk&quot;, sans-serif;
             font-weight: 600;
           "
         >
@@ -156,22 +140,14 @@
     >
       <defs>
         <filter id="gooey">
-          <feGaussianBlur
-            in="SourceGraphic"
-            stdDeviation="6"
-            result="blur"
-          />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
           <feColorMatrix
             in="blur"
             mode="matrix"
             values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
             result="goo"
           />
-          <feComposite
-            in="SourceGraphic"
-            in2="goo"
-            operator="atop"
-          />
+          <feComposite in="SourceGraphic" in2="goo" operator="atop" />
         </filter>
       </defs>
     </svg>
@@ -192,11 +168,7 @@
       </nav>
       <div class="mode-switch-container">
         <label for="mode-toggle"><div class="toggle"></div></label>
-        <input
-          type="checkbox"
-          id="mode-toggle"
-          style="display: none"
-        />
+        <input type="checkbox" id="mode-toggle" style="display: none" />
       </div>
     </header>
 
@@ -209,22 +181,15 @@
           modern design.
         </p>
         <div class="cta-buttons-container">
-          <a
-            href="#contact"
-            class="contact cta"
-            >Contact Me</a
-          >
-          <a
-            href="#projects"
-            class="my-projects-cta"
-            >My Projects</a
-          >
+          <a href="#contact" class="contact cta">Contact Me</a>
+          <a href="#projects" class="my-projects-cta">My Projects</a>
         </div>
       </div>
       <img
-        src="images/Main image.jpg"
+        src="images/Untitled_Artwork 24.png"
         alt="Picture of Spartak"
         class="img main"
+        style="object-fit: contain;"
       />
     </section>
 
@@ -232,8 +197,8 @@
       <div class="about-text-container">
         <h1>About Me</h1>
         <p class="about-text">
-          I'm a developer based in Oslo, currently working mostly with
-          JavaScript, TypeScript, React, HTML and CSS to build practical,
+          I'm a developer living in Oslo with my wife and our doxie Freia. I am currently working mostly with
+          JavaScript, TypeScript, React, Databases + SQL, HTML and CSS to build practical,
           user-friendly web applications. I enjoy turning ideas and designs into
           working products, integrating APIs, and building components that are
           clear, maintainable, and easy to work with in a team.
@@ -262,18 +227,23 @@
           people who care about building good, thoughtful software.
         </p>
         <div class="cta-buttons-container">
-          <a
-            href="#contact"
-            class="let-us-chat cta"
-            >Let's have a chat</a
-          >
+          <a href="#contact" class="let-us-chat cta">Let's have a chat</a>
         </div>
       </div>
+      <div style="margin-left: 20px;">
       <img
-        src="images/Spartak & Freia.jpg"
+        src="images/Untitled_Artwork 26.png"
         alt="Picture of Spartak and Freia"
         class="img about"
+        style="object-fit: cover; width: 400px; margin-bottom: 20px;"
       />
+            <img
+        src="images/Untitled_Artwork 25.png"
+        alt="Picture of Spartak and Freia"
+        class="img about"
+        style="object-fit: contain; width: 400px; height: 400px;"
+      />
+      </div>
     </section>
 
     <section id="skills">
@@ -294,31 +264,13 @@
     <section id="projects">
       <h1>Calculator</h1>
       <div class="calculator">
-        <div
-          class="calc-display"
-          id="calc-display"
-        >
-          0
-        </div>
+        <div class="calc-display" id="calc-display">0</div>
         <div class="calc-buttons">
-          <button
-            class="calc-btn calc-btn-clear"
-            data-action="clear"
-          >
+          <button class="calc-btn calc-btn-clear" data-action="clear">
             AC
           </button>
-          <button
-            class="calc-btn calc-btn-op"
-            data-action="sign"
-          >
-            +/−
-          </button>
-          <button
-            class="calc-btn calc-btn-op"
-            data-action="percent"
-          >
-            %
-          </button>
+          <button class="calc-btn calc-btn-op" data-action="sign">+/−</button>
+          <button class="calc-btn calc-btn-op" data-action="percent">%</button>
           <button
             class="calc-btn calc-btn-accent"
             data-action="op"
@@ -327,25 +279,13 @@
             ÷
           </button>
 
-          <button
-            class="calc-btn"
-            data-action="number"
-            data-value="7"
-          >
+          <button class="calc-btn" data-action="number" data-value="7">
             7
           </button>
-          <button
-            class="calc-btn"
-            data-action="number"
-            data-value="8"
-          >
+          <button class="calc-btn" data-action="number" data-value="8">
             8
           </button>
-          <button
-            class="calc-btn"
-            data-action="number"
-            data-value="9"
-          >
+          <button class="calc-btn" data-action="number" data-value="9">
             9
           </button>
           <button
@@ -356,25 +296,13 @@
             ×
           </button>
 
-          <button
-            class="calc-btn"
-            data-action="number"
-            data-value="4"
-          >
+          <button class="calc-btn" data-action="number" data-value="4">
             4
           </button>
-          <button
-            class="calc-btn"
-            data-action="number"
-            data-value="5"
-          >
+          <button class="calc-btn" data-action="number" data-value="5">
             5
           </button>
-          <button
-            class="calc-btn"
-            data-action="number"
-            data-value="6"
-          >
+          <button class="calc-btn" data-action="number" data-value="6">
             6
           </button>
           <button
@@ -385,25 +313,13 @@
             −
           </button>
 
-          <button
-            class="calc-btn"
-            data-action="number"
-            data-value="1"
-          >
+          <button class="calc-btn" data-action="number" data-value="1">
             1
           </button>
-          <button
-            class="calc-btn"
-            data-action="number"
-            data-value="2"
-          >
+          <button class="calc-btn" data-action="number" data-value="2">
             2
           </button>
-          <button
-            class="calc-btn"
-            data-action="number"
-            data-value="3"
-          >
+          <button class="calc-btn" data-action="number" data-value="3">
             3
           </button>
           <button
@@ -421,16 +337,8 @@
           >
             0
           </button>
-          <button
-            class="calc-btn"
-            data-action="decimal"
-          >
-            .
-          </button>
-          <button
-            class="calc-btn calc-btn-accent"
-            data-action="equals"
-          >
+          <button class="calc-btn" data-action="decimal">.</button>
+          <button class="calc-btn calc-btn-accent" data-action="equals">
             =
           </button>
         </div>
@@ -452,37 +360,22 @@
             href="https://www.instagram.com/spartak_visuals/?hl=nb"
             target="_blank"
           >
-            <img
-              src="icons/instagram.png"
-              alt="Instagram icon"
-            />
+            <img src="icons/instagram.png" alt="Instagram icon" />
           </a>
 
           <a
             href="https://www.linkedin.com/in/spartak-mamiev-a20442161/"
             target="_blank"
           >
-            <img
-              src="icons/linkedin.png"
-              alt="LinkedIn icon"
-            />
+            <img src="icons/linkedin.png" alt="LinkedIn icon" />
           </a>
 
-          <a
-            href="https://github.com/Spartak-Mamiev"
-            target="_blank"
-          >
-            <img
-              src="icons/github.png"
-              alt="GitHub icon"
-            />
+          <a href="https://github.com/Spartak-Mamiev" target="_blank">
+            <img src="icons/github.png" alt="GitHub icon" />
           </a>
         </div>
       </div>
-      <form
-        action="https://api.web3forms.com/submit"
-        method="POST"
-      >
+      <form action="https://api.web3forms.com/submit" method="POST">
         <input
           type="hidden"
           name="access_key"
@@ -519,12 +412,7 @@
             placeholder="Enter your message"
             required
           ></textarea>
-          <button
-            type="submit"
-            id="submit"
-          >
-            Leave a message
-          </button>
+          <button type="submit" id="submit">Leave a message</button>
         </div>
       </form>
     </section>
@@ -538,9 +426,6 @@
       </p>
     </footer>
 
-    <script
-      src="script.js"
-      defer
-    ></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
